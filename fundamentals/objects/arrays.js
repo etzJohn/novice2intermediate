@@ -14,7 +14,7 @@ let [dog, rabbit, cat] = pets;
 let [first, ...rest] = pets;
 
 // Destructuring arrays from return values
-function tagPets(pets) {
+const tagPets = (pets) => {
     let dog = `<h1>${pets[0]}</h1>`;
     let rabbit = `<h1>${pets[1]}</h1>`
     let cat = `<h1>${pets[2]}</h1>`
@@ -49,3 +49,38 @@ for (pet of pets) {
 */
 
 let topDog = pets.find( pet => pet.type === "Dog");
+
+/*
+  There will be data to process in your project. Whether it is 10 items or 10000000000 items,
+  it is important to understand how to process this data effectively.
+
+  Enter map, filter, reduce
+
+  Their basic behaviour is: Apply a function to each item in the array before returning a NEW array
+*/
+
+
+//  Array.prototype.map()
+
+
+let myNums = [1,2,3,4,5,6,7,8,9,10];
+
+const doubleIt = (num) => {
+  return num * 2;
+}
+
+let myNumsDoubled = myNums.map(doubleIt);
+
+// Array.prototype.filter()
+
+const evensOnly = (num) => {
+  return num % 2 === 0;
+};
+
+let myEvenNums = myNums.filter(evensOnly);
+
+// Array.prototype.reduce()
+
+const sum = myNums.reduce( (memo, num) => {
+  return memo + num;
+}, 0);
